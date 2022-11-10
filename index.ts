@@ -76,6 +76,8 @@ const server = new ApolloServer({
   plugins: [ApolloServerPluginLandingPageLocalDefault({ embed: true })]
 })
 
+const port = process.env.PORT || 4000
+
 async function start() {
   try {
     await sequelize.authenticate()
@@ -83,7 +85,7 @@ async function start() {
   } catch (err) {
     console.log('Error connecting to the database: ', err)
   }
-  server.listen().then(({ url }) => {
+  server.listen({ port }).then(({ url }) => {
     console.log(`🚀  Server ready at ${url}`)
   })
 }
