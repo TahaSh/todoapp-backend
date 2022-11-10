@@ -1,9 +1,11 @@
 {
   "name": "todoapp-backend",
   "version": "1.0.0",
-  "description": "Backend for Building Your First Single-Page Application in Vue",
+  "description": "Backend for a todo app",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
     "dev": "ts-node-dev index.ts"
   },
   "keywords": [],
